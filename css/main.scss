@@ -1,0 +1,53 @@
+* {
+	font-family: "Amatic SC";
+	font-weight: 700;
+}
+
+header,footer {
+	background-color: pink;
+	h1 {
+		text-align: center;
+		color: #FFFFFF;
+	}
+}
+
+#game {
+	text-align: center;
+	.instructions {
+		h2 {
+			font-size: 5em;
+			text-decoration: underline;
+		}
+		ul {
+			li {
+				list-style: none;
+				font-size: 3em;
+			}
+		}
+		button {
+		    width: 10%;
+		    padding: 1%;
+		    background-color: pink;
+		    border-style: none;
+		    border-radius: 21px;
+		    font-size: 2em;
+		    color: white;
+		}
+	}
+	.container-box {
+		width: 23%;
+		margin: auto;
+		margin-top: 4%;
+		margin-bottom: 4%;
+		.userBox {
+		    padding: 13%;
+		    width: 82px;
+		    font-size: 3em;
+               text-align: center;
+		    border: 1px solid;
+		    margin: auto;
+		    margin-bottom: 21%;
+		    border-radius: 10px;
+	     }
+	}
+}
