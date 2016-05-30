@@ -1,6 +1,11 @@
-//al hacerle un click aparece el X - color azul
+
 $(document).ready(function() {
 	var play = 0;
+	 var arreglo = [
+	        ["0", "1", "2"],
+	        ["3", "4", "5"],
+	        ["6", "7", "8"]
+	    ]
 	$(".userBox").click(function() {
 		play++;
 		if(play%2===0) {
@@ -12,65 +17,43 @@ $(document).ready(function() {
 			$(this).css({"background-color":"#B0DEED","color":"white"});
 		}
 
-		var box1 = $("#1").text();
-		var box2 = $("#2").text();
-		var box3 = $("#3").text();
-		var box4 = $("#4").text();
-		var box5 = $("#5").text();
-		var box6 = $("#6").text();
-		var box7 = $("#7").text();
-		var box8 = $("#8").text();
-		var box9 = $("#9").text();
+		//aqui vienen los arreglos D:
 
-		if(box1 == box2 && box1 == box3 && box2 == box3) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box4 == box5 && box4 == box6 && box5 == box6) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box7 == box8 && box7 == box9 && box8 == box9) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box1 == box4 && box1 == box7 && box4 == box7) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box2 == box5 && box2 == box8 && box5 == box8) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box3 == box6 && box3 == box9 && box6 == box9) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box1 == box5 && box1 == box9 && box5 == box9) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else if(box3 == box5 && box3 == box7 && box5 == box7) {
-			$(".respuesta").html("El ganador es " + box1 + "." + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		} else {
-			$(".respuesta").html("Es un empate!! (:" + "<br/>" + "Vamos a jugar otra vez!");
-			$(".respuesta").css({"text-align":"center","font-size":"5em","margin-bottom":"4%"});
-		}
+		arreglo[0][0] = $("#0").text();
+	        	arreglo[0][1] = $("#1").text();
+	        	arreglo[0][2] = $("#2").text();
+
+	        	arreglo[1][0] = $("#3").text();
+	        	arreglo[1][1] = $("#4").text();
+	        	arreglo[1][2] = $("#5").text();
+
+	        	arreglo[2][0] = $("#6").text();
+	        	arreglo[2][1] = $("#7").text();
+	        	arreglo[2][2] = $("#8").text();
+
+	        /*for y arreglos :c*/
+
+	        for (var i = 0; i < 3; i++) {
+	            if (arreglo[i][0] == arreglo[i][1] && arreglo[i][1] == arreglo[i][2] && arreglo[i][0] != "+") {
+	                alert("Gano " + arreglo[i][0] + "!");
+	            }
+	        }
+
+	        for (var i = 0; i < 3; i++) {
+	            if (arreglo[0][i] == arreglo[1][i] && arreglo[1][i] == arreglo[2][i] && arreglo[0][i] != "+") {
+	                alert("Gano " + arreglo[0][i] + "!");
+	            }
+	        }
+	        if (arreglo[0][0] == arreglo[1][1] && arreglo[0][0] == arreglo[2][2] && arreglo[0][0] != "+") {
+	            alert("Gano " + arreglo[0][0] + "!");
+	        }
+	        if (arreglo[0][2] == arreglo[1][1] && arreglo[0][2] == arreglo[2][0] && arreglo[0][2] != "+") {
+	            alert("Gano " + arreglo[0][2] + "!");
+	        }
 	});
 });
 
-// $(document).ready(function() {
-// 	$(".userBox").click(function() {
-// 		$(this).css({"background-color":"#B0DEED","color":"white"});
-// 	});
-// });
 
-// //al hacerle dobleclick aparece el O - color rojito
-// $(document).ready(function() {
-// 	$(".userBox").dblclick(function() {
-// 		$(this).html("O");
-// 	});
-// });
-
-// $(document).ready(function() {
-// 	$(".userBox").dblclick(function() {
-// 		$(this).css({"background-color":"#FF6862","color":"white"});
-// 	});
-// });
 
 //recargar el juego 
 $(document).ready(function() {
